@@ -28,10 +28,23 @@
         // },
         // ];
 
-    // Loop through array --> for (var i=0; i<array.length; i++) {
+    // Loop through array --> for (var i=0; i<array.length; i++)
         // Get the object number i and extract the data
-            // Get each key's value to be appended to a place on html represented by an element
+            // Get each object's question key - using set textContent
+                // .question.textContent = array[i].question
+            // Get each object's option key
+                // .optA.textContent = array[i].option[0]
+                // .optB.textContent = array[i].option[1]
+                // .optC.textContent = array[i].option[2]
+                // .optD.textContent = array[i].option[3]
+            // Get each object's answer key
+                // array[i].answer
         // Use if/else conditional to track correct and wrong
-            // If user's click === options.indexOf[answer], correct++
-            // Else wrong++ ---> penalize user on time: timer -2sec
+            // If user clicks on correct answer -- use addEventListener ("click", ???) --> array[i].answer
+                // set element with class .answer to "Correct!"
+                // correct++
+            // Else
+                // set element with class .answer to "Wrong!"
+                // wrong++
+                // penalize user on time: timer -2sec
     // 
