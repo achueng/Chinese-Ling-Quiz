@@ -12,20 +12,20 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <header>
-        <div class="high-scores">
-            View High Scores
-        </div>
-        <div class="timer">
-            Time Left: <span id="time"></span>
-        </div>
-        <div class="scores">
+    <header class="row">
+        <div class="scores col-4">
             <div>
                 Correct: <span id="correct"></span>
             </div>
             <div>
                 Wrong: <span id="wrong"></span>
             </div>
+        </div>
+        <div class="timer col-4">
+            Time Left: <span id="time">120</span> seconds
+        </div>
+        <div class="high-scores col-4">
+            <button type="button" class="btn btn-link btn-sm" id="high-score-btn">View High Scores
         </div>
     </header>
     <div class="container">
@@ -34,16 +34,24 @@
             <h1>Quiz Time!</h1>
             <h3>Click on the START button to begin the quiz!</h3>
             <hr>
-            <button id="startBtn">START</button>
+            <button type="button" class="btn" id="startBtn">START</button>
         </div>
         <!-- Questions -->
         <div class="quiz hide">
             <h2 class="question"></h2>
             <div class="options">
-                <button>a. <span class="optA"></span></button>
-                <button>b. <span class="optB"></span></button>
-                <button>c. <span class="optC"></span></button>
-                <button>d. <span class="optD"></span></button>
+                <button type="button" class="btn">
+                    a. <span class="optA"></span>
+                </button>
+                <button type="button" class="btn">
+                    b. <span class="optB"></span>
+                </button>
+                <button type="button" class="btn">
+                    c. <span class="optC"></span>
+                </button>
+                <button type="button" class="btn">
+                    d. <span class="optD"></span>
+                </button>
             </div>
             <hr>
             <span class="answer"></span>
