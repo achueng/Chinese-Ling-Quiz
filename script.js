@@ -1,4 +1,24 @@
 // Declare global var: correct, wrong, container, highscore, timer, quiz, intro, startBtn
+// Header
+var correct = document.querySelector("#correct");
+var wrong = document.querySelector("#wrong");
+// Either one? 
+var highScores = document.querySelector(".high-scores");
+var highScoreBtn = document.querySelector("#high-score-btn");
+var timer = document.querySelector(".timer");
+var time = document.querySelector("#time");
+
+// Container/Box
+var box = document.querySelector(".custom-box");
+var intro = document.querySelector(".intro");
+var startBtn = document.querySelector("#start-btn");
+var quiz = document.querySelector(".quiz");
+var questionEl = document.querySelector(".question");
+var optionA = document.querySelector(".optA");
+var optionB = document.querySelector(".optB");
+var optionC = document.querySelector(".optC");
+var optionD = document.querySelector(".optD");
+var result = document.querySelector(".answer");
 
 // When webpage loads, want to see view highscores, timer, score, and intro page
 // Declare toggle function to change intro to quiz display & trigger timer via start button
