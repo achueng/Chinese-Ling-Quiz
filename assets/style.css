@@ -28,6 +28,10 @@ body {
     border: none;
 }
 
+.hide {
+    display: none;
+}
+
 /* Container */
 /* .container used to help visualize the div */
 .container {
