@@ -4,3 +4,24 @@ body {
     font-size: 16px;
     background-color: #faf6f0;
 }
+
+.scores {
+    text-align: left;
+}
+
+.timer {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.high-scores {
+    text-align: right;
+}
+
+#high-score-btn {
+    text-decoration: none;
+    color: black;
+    background-color: #faf6f0;
+    border: none;
+}
