@@ -22,7 +22,14 @@ var result = document.querySelector(".answer");
 
 // When webpage loads, want to see view highscores, timer, score, and intro page
 // Declare toggle function to change intro to quiz display & trigger timer via start button
-    // toggle .add("hide")/.remove("hide")
+    // click event listener on start button
+startBtn.addEventListener("click", startQuiz);
+
+function startQuiz() {
+    // toggle classList.add/remove("hide")
+    intro.classList.add("hide");
+    quiz.classList.remove("hide");
+}
 
 // Timer starts --> setInterval(someFunction, 1000)
     // Declare var time = starting time (seconds)
