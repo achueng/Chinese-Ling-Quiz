@@ -19,6 +19,7 @@ var optionB = document.querySelector(".optB");
 var optionC = document.querySelector(".optC");
 var optionD = document.querySelector(".optD");
 var result = document.querySelector(".answer");
+var timeEl;
 
 // When webpage loads, want to see view highscores, timer, score, and intro page
 // Declare toggle function to change intro to quiz display & trigger timer via start button
@@ -29,15 +30,21 @@ function startQuiz() {
     // toggle classList.add/remove("hide")
     intro.classList.add("hide");
     quiz.classList.remove("hide");
+
+    // Timer starts
+    timeEl = setInterval(quizTime, 1000)
 }
 
-// Timer starts --> setInterval(someFunction, 1000)
-    // Declare var time = starting time (seconds)
-    // Time --
-    // Changing timer number is added to the span#timer --> timerEL.textContent = time
-    
+function quizTime() {
+    var timeElapsed = parseInt(time.textContent);
+    timeElapsed--
+    // Changed timeElapsed number is added to the span #time
+    time.textContent = timeElapsed;
     // If/else conditional to indicate when to stop quiz --> use clearInterval();
-        // If (time === 0) {clearInterval{};}
+    if (timeElapsed === 0) {
+        clearInterval(timeEl);
+    }
+}
 
 // Declare someFunction
     // Declare DOM elements: question, options, optA, optB, optC, optD, answer
