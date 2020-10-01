@@ -48,3 +48,12 @@ body {
 .quiz {
     margin: 20px 50px;
 }
+
+/* High Scores List */
+.highscores-list {
+    text-align: center;
+}
+
+li {
+    text-align: left;
+}
