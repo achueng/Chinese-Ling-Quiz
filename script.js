@@ -51,7 +51,7 @@ function quizTime() {
 var quizContent = [
     {
         question: "1. Here is a random question.",
-        options: ["a", "b", "c", "d"],
+        options: ["option a", "option b", "option c", "option d"],
         answer: 2
     },
     // {
@@ -67,9 +67,11 @@ for (var i=0; i<quizContent.length; i++) {
     // Get the object number i (index of array) and extract the question
     var questions = quizContent[i].question;
         // Overwrite the qustionEl
-        questionEl.textContent = questions
-            // Get each object's option key
-                // .optA.textContent = array[i].option[0]
+        questionEl.textContent = questions;
+    // Get the object number i (index of array) and extract the options
+    var optA = quizContent[i].options[0];
+        // Overwrite whatever was in optionA
+        optionA.textContent = optA;    
                 // .optB.textContent = array[i].option[1]
                 // .optC.textContent = array[i].option[2]
                 // .optD.textContent = array[i].option[3]
@@ -83,5 +85,5 @@ for (var i=0; i<quizContent.length; i++) {
                 // set element with class .answer to "Wrong!"
                 // wrong++
                 // penalize user on time: timer -2sec
-    console.log(questions);
+    console.log(optA);
 }
