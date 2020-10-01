@@ -54,17 +54,20 @@ var quizContent = [
         options: ["a", "b", "c", "d"],
         answer: 2
     },
-    {
-        question: "2. Here is another random question.",
-        options: ["a", "b", "c", "d"],
-        answer: 4
-    }
+    // {
+    //     question: "2. Here is another random question.",
+    //     options: ["a", "b", "c", "d"],
+    //     answer: 4
+    // }
 ];
 
-    // Loop through array --> for (var i=0; i<array.length; i++)
-        // Get the object number i and extract the data
-            // Get each object's question key - using set textContent
-                // .question.textContent = array[i].question
+// Click event on a button will trigger for loop
+// Loop through quizContent array
+for (var i=0; i<quizContent.length; i++) {
+    // Get the object number i (index of array) and extract the question
+    var questions = quizContent[i].question;
+        // Overwrite the qustionEl
+        questionEl.textContent = questions
             // Get each object's option key
                 // .optA.textContent = array[i].option[0]
                 // .optB.textContent = array[i].option[1]
@@ -80,4 +83,5 @@ var quizContent = [
                 // set element with class .answer to "Wrong!"
                 // wrong++
                 // penalize user on time: timer -2sec
-    // 
+    console.log(questions);
+}
