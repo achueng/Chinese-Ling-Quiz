@@ -61,6 +61,16 @@ function showHighScores() {
     quiz.classList.add("hide");
     highScoresList.classList.remove("hide");
 }
+
+backBtn.addEventListener("click", homePage)
+
+function homePage() {
+    // toggle classList.add/remove("hide")
+    intro.classList.remove("hide");
+    quiz.classList.add("hide");
+    highScoresList.classList.add("hide");
+}
+
 // Declare array of objects consisting of questions & options & answers
 // The value of the key answer is a number that corresponds to the index of the correct answer in the array of the key options.
 var quizContent = [
