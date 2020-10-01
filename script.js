@@ -72,9 +72,12 @@ for (var i=0; i<quizContent.length; i++) {
     var optA = quizContent[i].options[0];
         // Overwrite whatever was in optionA
         optionA.textContent = optA;    
-                // .optB.textContent = array[i].option[1]
-                // .optC.textContent = array[i].option[2]
-                // .optD.textContent = array[i].option[3]
+    var optB = quizContent[i].options[1];
+        optionB.textContent = optB;
+    var optC = quizContent[i].options[2];
+        optionC.textContent = optC;
+    var optD = quizContent[i].options[3];
+        optionD.textContent = optD;
             // Get each object's answer key
                 // array[i].answer
         // Use if/else conditional to track correct and wrong
@@ -85,5 +88,5 @@ for (var i=0; i<quizContent.length; i++) {
                 // set element with class .answer to "Wrong!"
                 // wrong++
                 // penalize user on time: timer -2sec
-    console.log(optA);
+    console.log(optA, optB, optC, optD);
 }
