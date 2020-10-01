@@ -2,7 +2,6 @@
 // Header
 var correct = document.querySelector("#correct");
 var wrong = document.querySelector("#wrong");
-// Either one? 
 var highScores = document.querySelector(".high-scores");
 var highScoreBtn = document.querySelector("#high-score-btn");
 var timer = document.querySelector(".timer");
@@ -19,6 +18,11 @@ var optionB = document.querySelector(".optB");
 var optionC = document.querySelector(".optC");
 var optionD = document.querySelector(".optD");
 var result = document.querySelector(".answer");
+
+// High Scores Page
+var highScoresList = document.querySelector(".highscores-list");
+var backBtn = document.querySelector(".back-btn");
+
 var timeEl;
 // var userChoice;
 
@@ -31,6 +35,8 @@ function startQuiz() {
     // toggle classList.add/remove("hide")
     intro.classList.add("hide");
     quiz.classList.remove("hide");
+    highScoresList.classList.add("hide");
+    highScoreBtn.classList.add("hide");
 
     // Timer starts
     timeEl = setInterval(quizTime, 1000)
@@ -47,6 +53,14 @@ function quizTime() {
     }
 }
 
+highScoreBtn.addEventListener("click", showHighScores);
+
+function showHighScores() {
+    // toggle classList.add/remove("hide")
+    intro.classList.add("hide");
+    quiz.classList.add("hide");
+    highScoresList.classList.remove("hide");
+}
 // Declare array of objects consisting of questions & options & answers
 // The value of the key answer is a number that corresponds to the index of the correct answer in the array of the key options.
 var quizContent = [
@@ -91,16 +105,18 @@ console.log(correctAnswer);
 // optionC.parentElement.addEventListener("click", clickBtn);
 // optionD.parentElement.addEventListener("click", clickBtn);
 
+// console.log(optionA.parentElement.getAttribute("data-option"));
 // console.log(optionB.parentElement.getAttribute("data-option"));
+// console.log(optionC.parentElement.getAttribute("data-option"));
+// console.log(optionD.parentElement.getAttribute("data-option"));
 
 // function clickBtn(event) {
 //     var userChoice = event.target.getAttribute("data-option");
 //     console.log(userChoice);
 // }
 
-// If userChoice (gets value of data-option == options[_]) === correctAnswer, show correct in answer span (HTML) and increment correct score
-    // var a = optionA.textContent
-    // if (correctAnswer === data-attribute.value) {
+// If userChoice (gets value of data-option == options[_]) === correctAnswer, show 'correct' in answer span (HTML) and increment correct score
+    // if (userChoice == correctAnswer) {
     //     result.textContent = "Correct!"
     //     var numsC = parsrInt(correct.textContent);
     //     correct.textContent = numC++
