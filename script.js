@@ -13,6 +13,7 @@ var intro = document.querySelector(".intro");
 var startBtn = document.querySelector("#start-btn");
 var quiz = document.querySelector(".quiz");
 var questionEl = document.querySelector(".question");
+var optBtn = document.querySelectorAll(".option-btn");
 var optionA = document.querySelector(".optA");
 var optionB = document.querySelector(".optB");
 var optionC = document.querySelector(".optC");
@@ -110,20 +111,16 @@ for (var i=0; i<quizContent.length; i++) {
 console.log(correctAnswer);
 // Use if/else conditional to track correct and wrong
 // Listen for user's click on each option button
-// optionA.parentElement.addEventListener("click", clickBtn);
-// optionB.parentElement.addEventListener("click", clickBtn);
-// optionC.parentElement.addEventListener("click", clickBtn);
-// optionD.parentElement.addEventListener("click", clickBtn);
 
-// console.log(optionA.parentElement.getAttribute("data-option"));
-// console.log(optionB.parentElement.getAttribute("data-option"));
-// console.log(optionC.parentElement.getAttribute("data-option"));
-// console.log(optionD.parentElement.getAttribute("data-option"));
+for (var i=0; i<optBtn.length; i++){
+    optBtn[i].addEventListener("click", clickBtn);
+}
 
-// function clickBtn(event) {
-//     var userChoice = event.target.getAttribute("data-option");
-//     console.log(userChoice);
-// }
+function clickBtn(event) {
+    event.stopPropagation();
+    var userChoice = event.target.getAttribute("data-option");
+    console.log(userChoice);
+}
 
 // If userChoice (gets value of data-option == options[_]) === correctAnswer, show 'correct' in answer span (HTML) and increment correct score
     // if (userChoice == correctAnswer) {
