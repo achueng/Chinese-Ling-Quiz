@@ -25,12 +25,14 @@ var highScoresList = document.querySelector(".highscores-list");
 var backBtn = document.querySelector(".back-btn");
 
 var timeEl;
-// var userChoice;
+var userChoice;
 
 // When webpage loads, want to see view highscores, timer, score, and intro page
 // Declare toggle function to change intro to quiz display & trigger timer via start button
     // click event listener on start button
 startBtn.addEventListener("click", startQuiz);
+highScoreBtn.addEventListener("click", showHighScores);
+backBtn.addEventListener("click", homePage)
 
 function startQuiz() {
     // toggle classList.add/remove("hide")
@@ -54,16 +56,12 @@ function quizTime() {
     }
 }
 
-highScoreBtn.addEventListener("click", showHighScores);
-
 function showHighScores() {
     // toggle classList.add/remove("hide")
     intro.classList.add("hide");
     quiz.classList.add("hide");
     highScoresList.classList.remove("hide");
 }
-
-backBtn.addEventListener("click", homePage)
 
 function homePage() {
     // toggle classList.add/remove("hide")
@@ -108,36 +106,31 @@ for (var i=0; i<quizContent.length; i++) {
     var correctAnswer = quizContent[i].answer;
 }
 
-console.log(correctAnswer);
-// Use if/else conditional to track correct and wrong
 // Listen for user's click on each option button
-
 for (var i=0; i<optBtn.length; i++){
     optBtn[i].addEventListener("click", clickBtn);
 }
 
 function clickBtn(event) {
-    event.stopPropagation();
-    var userChoice = event.target.getAttribute("data-option");
-    console.log(userChoice);
+    userChoice = event.target.getAttribute("data-option");
+    logScores();
 }
 
-// If userChoice (gets value of data-option == options[_]) === correctAnswer, show 'correct' in answer span (HTML) and increment correct score
-    // if (userChoice == correctAnswer) {
-    //     result.textContent = "Correct!"
-    //     var numsC = parsrInt(correct.textContent);
-    //     correct.textContent = numC++
-    // }
-    // else {
-    //     result.textContent = "Wrong!"
-    //     var numsW = parsrInt(wrong.textContent);
-    //     wrong.textContent = numW++
-
-
-
-
-        
-
-                // penalize user on time: timer -2sec
-
+// If userChoice is the same as correctAnswer, show 'correct' in answer span (HTML) and increment correct score; else show "wrong" and increment wrong score;
+function logScores () {
+    if (userChoice == correctAnswer) {
+        result.textContent = "Correct!";
+        var numsC = 0;
+        correct.textContent = numsC++;
+        correct.append(numsC);
+    }
+    else {
+        result.textContent = "Wrong!";
+        var numsW = 0;
+        wrong.textContent = numsW++;
+        wrong.append(numsW);
+    }
+    console.log(numsC);
+    console.log(numsW);
+}
 
