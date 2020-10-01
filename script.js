@@ -20,6 +20,7 @@ var optionC = document.querySelector(".optC");
 var optionD = document.querySelector(".optD");
 var result = document.querySelector(".answer");
 var timeEl;
+// var userChoice;
 
 // When webpage loads, want to see view highscores, timer, score, and intro page
 // Declare toggle function to change intro to quiz display & trigger timer via start button
@@ -68,7 +69,7 @@ for (var i=0; i<quizContent.length; i++) {
     var questions = quizContent[i].question;
         // Overwrite the qustionEl
         questionEl.textContent = questions;
-    // Get the object number i (index of array) and extract the options
+    // Get the object number i and extract the options
     var optA = quizContent[i].options[0];
         // Overwrite whatever was in optionA
         optionA.textContent = optA;    
@@ -78,15 +79,42 @@ for (var i=0; i<quizContent.length; i++) {
         optionC.textContent = optC;
     var optD = quizContent[i].options[3];
         optionD.textContent = optD;
-            // Get each object's answer key
-                // array[i].answer
-        // Use if/else conditional to track correct and wrong
-            // If user clicks on correct answer -- use addEventListener ("click", ???) --> array[i].answer
-                // set element with class .answer to "Correct!"
-                // correct++
-            // Else
-                // set element with class .answer to "Wrong!"
-                // wrong++
-                // penalize user on time: timer -2sec
-    console.log(optA, optB, optC, optD);
+    // Get the object number i and extract the answer
+    var correctAnswer = quizContent[i].answer;
 }
+
+console.log(correctAnswer);
+// Use if/else conditional to track correct and wrong
+// Listen for user's click on each option button
+// optionA.parentElement.addEventListener("click", clickBtn);
+// optionB.parentElement.addEventListener("click", clickBtn);
+// optionC.parentElement.addEventListener("click", clickBtn);
+// optionD.parentElement.addEventListener("click", clickBtn);
+
+// console.log(optionB.parentElement.getAttribute("data-option"));
+
+// function clickBtn(event) {
+//     var userChoice = event.target.getAttribute("data-option");
+//     console.log(userChoice);
+// }
+
+// If userChoice (gets value of data-option == options[_]) === correctAnswer, show correct in answer span (HTML) and increment correct score
+    // var a = optionA.textContent
+    // if (correctAnswer === data-attribute.value) {
+    //     result.textContent = "Correct!"
+    //     var numsC = parsrInt(correct.textContent);
+    //     correct.textContent = numC++
+    // }
+    // else {
+    //     result.textContent = "Wrong!"
+    //     var numsW = parsrInt(wrong.textContent);
+    //     wrong.textContent = numW++
+
+
+
+
+        
+
+                // penalize user on time: timer -2sec
+
+
