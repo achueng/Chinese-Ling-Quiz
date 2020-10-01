@@ -32,10 +32,11 @@ body {
     display: none;
 }
 
-/* Container */
-/* .container used to help visualize the div */
-.container {
-    border: solid black 5px
+/* Container/Box */
+.custom-box {
+    border: solid black 5px;
+    margin-top: 30px;
+    padding: 20px;
 }
 
 /* Intro */
@@ -45,5 +46,5 @@ body {
 
 /* Questions */
 .quiz {
-    margin: 20px;
+    margin: 20px 50px;
 }
