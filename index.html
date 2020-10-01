@@ -15,10 +15,10 @@
     <header class="row">
         <div class="scores col-3">
             <div>
-                Correct: <span id="correct"></span>
+                Correct: <span id="correct">0</span>
             </div>
             <div>
-                Wrong: <span id="wrong"></span>
+                Wrong: <span id="wrong">0</span>
             </div>
         </div>
         <div class="timer col-6">
@@ -40,19 +40,19 @@
         <div class="quiz hide">
             <h2 class="question mb-3">Question </h2>
             <div class="options">
-                <button type="button" class="btn mb-2">
+                <button type="button" class="btn mb-2" data-option="0">
                     a. <span class="optA"></span>
                 </button>
                 <br>
-                <button type="button" class="btn mb-2">
+                <button type="button" class="btn mb-2" data-option="1">
                     b. <span class="optB"></span>
                 </button>
                 <br>
-                <button type="button" class="btn mb-2">
+                <button type="button" class="btn mb-2" data-option="2">
                     c. <span class="optC"></span>
                 </button>
                 <br>
-                <button type="button" class="btn mb-2">
+                <button type="button" class="btn mb-2" data-option="3">
                     d. <span class="optD"></span>
                 </button>
             </div>
