@@ -46,21 +46,20 @@ function quizTime() {
     }
 }
 
-// Declare someFunction
-    // Declare DOM elements: question, options, optA, optB, optC, optD, answer
-    // Declare array of objects (rep questions) consisting of options & boolean
-        // var array = [
-        // {
-        // question: "1. Here is a question.",
-        // options: ["a", "b", "c", "d"],
-        // answer: index # of correct answer in options array,
-        // },
-        // {
-        // question: "2. Here is a question.",
-        // options: ["a", "b", "c", "d"],
-        // answer: index # of correct answer in options array,
-        // },
-        // ];
+// Declare array of objects consisting of questions & options & answers
+// The value of the key answer is a number that corresponds to the index of the correct answer in the array of the key options.
+var quizContent = [
+    {
+        question: "1. Here is a random question.",
+        options: ["a", "b", "c", "d"],
+        answer: 2
+    },
+    {
+        question: "2. Here is another random question.",
+        options: ["a", "b", "c", "d"],
+        answer: 4
+    }
+];
 
     // Loop through array --> for (var i=0; i<array.length; i++)
         // Get the object number i and extract the data
