@@ -20,12 +20,14 @@ var optionC = document.querySelector(".optC");
 var optionD = document.querySelector(".optD");
 var result = document.querySelector(".answer");
 var subScore = document.querySelector(".submit-score");
+var userName = document.querySelector("#user-name");
 var submitBtn = document.querySelector("#submit-btn");
 
 // High Scores Page
 var highScoresList = document.querySelector(".highscores-list");
 var backBtn = document.querySelector(".back-btn");
 
+var timeElapsed;
 var timeEl;
 var currentQuestion = {};
 var questionCounter;
@@ -39,7 +41,8 @@ var wrongCount = 0;
     // click event listener on start button
 startBtn.addEventListener("click", startQuiz);
 highScoreBtn.addEventListener("click", showHighScores);
-backBtn.addEventListener("click", homePage)
+backBtn.addEventListener("click", homePage);
+submitBtn.addEventListener("click", submitScore);
 
 function startQuiz() {
     // toggle classList.add/remove("hide")
@@ -57,7 +60,7 @@ function startQuiz() {
 }
 
 function quizTime() {
-    var timeElapsed = parseInt(time.textContent);
+    timeElapsed = parseInt(time.textContent);
     timeElapsed--
     // Changed timeElapsed number is added to the span #time
     time.textContent = timeElapsed;
@@ -211,6 +214,7 @@ var quizContent = [
 function nextQuestion() {
     if (questionCounter === quizContent.length -1 ) {
         submitPage();
+        clearInterval(timeEl);
     }
     else {
     questionCounter++;
@@ -254,4 +258,14 @@ function submitPage() {
     highScoresList.classList.add("hide");
     highScoreBtn.classList.add("hide");
     subScore.classList.remove("hide");
+}
+
+function submitScore(event) {
+    event.preventDefault();
+    
+    var finalScore = correctCount - wrongCount + timeElapsed;
+    
+
+
+    showHighScores();
 }
