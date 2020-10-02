@@ -24,6 +24,9 @@ var result = document.querySelector(".answer");
 var highScoresList = document.querySelector(".highscores-list");
 var backBtn = document.querySelector(".back-btn");
 
+var currentQuestion = {};
+var questionCounter;
+var correctAnswer;
 var timeEl;
 var userChoice;
 
@@ -43,6 +46,9 @@ function startQuiz() {
 
     // Timer starts
     timeEl = setInterval(quizTime, 1000)
+
+    questionCounter = -1;
+    nextQuestion();
 }
 
 function quizTime() {
@@ -78,33 +84,43 @@ var quizContent = [
         options: ["option a", "option b", "option c", "option d"],
         answer: 2
     },
-    // {
-    //     question: "2. Here is another random question.",
-    //     options: ["a", "b", "c", "d"],
-    //     answer: 4
-    // }
+    {
+        question: "2. Here is another random question.",
+        options: ["a", "b", "c", "d"],
+        answer: 4
+    }
 ];
 
-// Click event on a button will trigger for loop
-// Loop through quizContent array
-for (var i=0; i<quizContent.length; i++) {
-    // Get the object number i (index of array) and extract the question
-    var questions = quizContent[i].question;
-        // Overwrite the qustionEl
-        questionEl.textContent = questions;
-    // Get the object number i and extract the options
-    var optA = quizContent[i].options[0];
-        // Overwrite whatever was in optionA
-        optionA.textContent = optA;    
-    var optB = quizContent[i].options[1];
-        optionB.textContent = optB;
-    var optC = quizContent[i].options[2];
-        optionC.textContent = optC;
-    var optD = quizContent[i].options[3];
-        optionD.textContent = optD;
-    // Get the object number i and extract the answer
-    var correctAnswer = quizContent[i].answer;
+function nextQuestion() {
+    questionCounter++;
+    currentQuestion = quizContent[questionCounter];
+    questionEl.textContent = currentQuestion.question;
+    optionA.textContent = currentQuestion.options[0];
+    optionB.textContent = currentQuestion.options[1];
+    optionC.textContent = currentQuestion.options[2];
+    optionD.textContent = currentQuestion.options[3];
+    correctAnswer = currentQuestion.answer
 }
+
+// Loop through quizContent array
+// for (var i=0; i<quizContent.length; i++) {
+//     // Get the object number i (index of array) and extract the question
+//     var questions = quizContent[i].question;
+//         // Overwrite the qustionEl
+//         questionEl.textContent = questions;
+//     // Get the object number i and extract the options
+//     var optA = quizContent[i].options[0];
+//         // Overwrite whatever was in optionA
+//         optionA.textContent = optA;    
+//     var optB = quizContent[i].options[1];
+//         optionB.textContent = optB;
+//     var optC = quizContent[i].options[2];
+//         optionC.textContent = optC;
+//     var optD = quizContent[i].options[3];
+//         optionD.textContent = optD;
+//     // Get the object number i and extract the answer
+//     var correctAnswer = quizContent[i].answer;
+// }
 
 // Listen for user's click on each option button
 for (var i=0; i<optBtn.length; i++){
@@ -113,24 +129,25 @@ for (var i=0; i<optBtn.length; i++){
 
 function clickBtn(event) {
     userChoice = event.target.getAttribute("data-option");
-    logScores();
+    // logScores();
+    nextQuestion();
 }
 
 // If userChoice is the same as correctAnswer, show 'correct' in answer span (HTML) and increment correct score; else show "wrong" and increment wrong score;
-function logScores () {
-    if (userChoice == correctAnswer) {
-        result.textContent = "Correct!";
-        var numsC = 0;
-        correct.textContent = numsC++;
-        correct.append(numsC);
-    }
-    else {
-        result.textContent = "Wrong!";
-        var numsW = 0;
-        wrong.textContent = numsW++;
-        wrong.append(numsW);
-    }
-    console.log(numsC);
-    console.log(numsW);
-}
+// function logScores () {
+//     if (userChoice == correctAnswer) {
+//         result.textContent = "Correct!";
+//         var numsC = 0;
+//         correct.textContent = numsC++;
+//         correct.append(numsC);
+//     }
+//     else {
+//         result.textContent = "Wrong!";
+//         var numsW = 0;
+//         wrong.textContent = numsW++;
+//         wrong.append(numsW);
+//     }
+//     console.log(numsC);
+//     console.log(numsW);
+// }
 
