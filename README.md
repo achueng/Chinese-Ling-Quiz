@@ -5,7 +5,7 @@ This project's objective is to create a quiz on a single webpage.
 
 Here is a preview of the webpage:
 
-![quiz.gif]()
+![quiz.gif](./assets/chinese-ling-quiz-preview.gif)
 
 ## Project Details
 
