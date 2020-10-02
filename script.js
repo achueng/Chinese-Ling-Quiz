@@ -224,26 +224,6 @@ function nextQuestion() {
     }
 }
 
-// Loop through quizContent array
-// for (var i=0; i<quizContent.length; i++) {
-//     // Get the object number i (index of array) and extract the question
-//     var questions = quizContent[i].question;
-//         // Overwrite the qustionEl
-//         questionEl.textContent = questions;
-//     // Get the object number i and extract the options
-//     var optA = quizContent[i].options[0];
-//         // Overwrite whatever was in optionA
-//         optionA.textContent = optA;    
-//     var optB = quizContent[i].options[1];
-//         optionB.textContent = optB;
-//     var optC = quizContent[i].options[2];
-//         optionC.textContent = optC;
-//     var optD = quizContent[i].options[3];
-//         optionD.textContent = optD;
-//     // Get the object number i and extract the answer
-//     var correctAnswer = quizContent[i].answer;
-// }
-
 // Listen for user's click on each option button
 for (var i=0; i<optBtn.length; i++){
     optBtn[i].addEventListener("click", clickBtn);
