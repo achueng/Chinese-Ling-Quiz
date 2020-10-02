@@ -20,11 +20,11 @@ var optionC = document.querySelector(".optC");
 var optionD = document.querySelector(".optD");
 var result = document.querySelector(".answer");
 var subScore = document.querySelector(".submit-score");
-var userName = document.querySelector("#user-name");
 var submitBtn = document.querySelector("#submit-btn");
 
 // High Scores Page
 var highScoresList = document.querySelector(".highscores-list");
+var listEl = document.querySelector("ul");
 var backBtn = document.querySelector(".back-btn");
 
 var timeElapsed;
@@ -262,10 +262,12 @@ function submitPage() {
 
 function submitScore(event) {
     event.preventDefault();
-    
     var finalScore = correctCount - wrongCount + timeElapsed;
-    
-
+    var userName = document.querySelector("#user-name").value;
+    var li = document.createElement("li");
+    li.setAttribute("class", "list-group-item");
+    li.textContent = userName + " " + finalScore;
+    listEl.appendChild(li);
 
     showHighScores();
 }
