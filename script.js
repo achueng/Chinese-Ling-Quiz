@@ -79,6 +79,7 @@ function showHighScores() {
 }
 
 function homePage() {
+    location.reload();
     // toggle classList.add/remove("hide")
     intro.classList.remove("hide");
     quiz.classList.add("hide");
