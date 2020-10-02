@@ -35,6 +35,7 @@ var correctAnswer;
 var userAnswer;
 var correctCount =  0;
 var wrongCount = 0;
+var finalUserScore;
 
 // When webpage loads, want to see view highscores, timer, score, and intro page
 // Declare toggle function to change intro to quiz display & trigger timer via start button
@@ -263,12 +264,20 @@ function submitPage() {
 
 function submitScore(event) {
     event.preventDefault();
+    // Calculate finalScore
     var finalScore = correctCount - wrongCount + timeElapsed;
+    // Grab user's name from input element
     var userName = document.querySelector("#user-name").value;
+    // Create list item element
     var li = document.createElement("li");
     li.setAttribute("class", "list-group-item");
-    li.textContent = userName + " " + finalScore;
+    // Add user's final score into list item, and add it to the high scores list
+    finalUserScore = userName + " " + finalScore;
+    li.textContent = finalUserScore;
     listEl.appendChild(li);
+
+    // Store finalUserScore in local storage
+    localStorage.setItem("scores", JSON.stringify(finalUserScore));
 
     showHighScores();
 }
