@@ -1,7 +1,7 @@
 # Chinese-Ling-Quiz
 This project's objective is to create a quiz on a single webpage. 
 
-**Deployed Page:** URL
+**Deployed Page:** https://achueng.github.io/Chinese-Ling-Quiz/
 
 Here is a preview of the webpage:
 
