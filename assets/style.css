@@ -34,7 +34,8 @@ body {
 
 /* Container/Box */
 .custom-box {
-    border: solid black 5px;
+    border: solid skyblue 4px;
+    border-radius: 10px;
     margin-top: 30px;
     padding: 20px;
 }
@@ -47,6 +48,11 @@ body {
 /* Questions */
 .quiz {
     margin: 20px 50px;
+}
+
+/* Submit Score */
+.submit-score {
+    font-size: 20px;
 }
 
 /* High Scores List */
