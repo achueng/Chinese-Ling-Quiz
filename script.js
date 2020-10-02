@@ -1,7 +1,7 @@
 // Declare global var: correct, wrong, container, highscore, timer, quiz, intro, startBtn
 // Header
-var correct = document.querySelector("#correct");
-var wrong = document.querySelector("#wrong");
+var correct = document.querySelector("#correctCount");
+var wrong = document.querySelector("#wrongCount");
 var highScores = document.querySelector(".high-scores");
 var highScoreBtn = document.querySelector("#high-score-btn");
 var timer = document.querySelector(".timer");
@@ -24,11 +24,13 @@ var result = document.querySelector(".answer");
 var highScoresList = document.querySelector(".highscores-list");
 var backBtn = document.querySelector(".back-btn");
 
+var timeEl;
 var currentQuestion = {};
 var questionCounter;
 var correctAnswer;
-var timeEl;
-var userChoice;
+var userAnswer;
+var correctCount =  0;
+var wrongCount = 0;
 
 // When webpage loads, want to see view highscores, timer, score, and intro page
 // Declare toggle function to change intro to quiz display & trigger timer via start button
@@ -81,12 +83,12 @@ function homePage() {
 var quizContent = [
     {
         question: "1. Here is a random question.",
-        options: ["option a", "option b", "option c", "option d"],
+        options: ["a. option a", "b. option b", "c. option c", "c. option d"],
         answer: 2
     },
     {
         question: "2. Here is another random question.",
-        options: ["a", "b", "c", "d"],
+        options: ["a.", "b.", "c.", "d."],
         answer: 4
     }
 ];
@@ -128,26 +130,20 @@ for (var i=0; i<optBtn.length; i++){
 }
 
 function clickBtn(event) {
-    userChoice = event.target.getAttribute("data-option");
-    // logScores();
+    var userChoice = event.target;
+    userAnswer = userChoice.getAttribute("data-option");
+
+    // If userChoice is the same as correctAnswer, show 'correct' in answer span (HTML) and increment correct score; else show "wrong" and increment wrong score;
+    if(userAnswer == correctAnswer) {
+        result.textContent = "Correct!";
+        correctCount++
+        correct.textContent = correctCount;
+    }
+    else {
+        result.textContent = "Wrong!";
+        wrongCount++
+        wrong.textContent = wrongCount;
+    }
+
     nextQuestion();
 }
-
-// If userChoice is the same as correctAnswer, show 'correct' in answer span (HTML) and increment correct score; else show "wrong" and increment wrong score;
-// function logScores () {
-//     if (userChoice == correctAnswer) {
-//         result.textContent = "Correct!";
-//         var numsC = 0;
-//         correct.textContent = numsC++;
-//         correct.append(numsC);
-//     }
-//     else {
-//         result.textContent = "Wrong!";
-//         var numsW = 0;
-//         wrong.textContent = numsW++;
-//         wrong.append(numsW);
-//     }
-//     console.log(numsC);
-//     console.log(numsW);
-// }
-
