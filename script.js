@@ -77,6 +77,15 @@ function showHighScores() {
     quiz.classList.add("hide");
     highScoresList.classList.remove("hide");
     subScore.classList.add("hide");
+
+    var storedScores = localStorage.getItem("scores")
+    var ss = JSON.parse(storedScores);
+    if (ss !== null) {
+        var li = document.createElement("li");
+        li.setAttribute("class", "list-group-item");
+        li.textContent = ss;
+        listEl.prepend(li);
+    }
 }
 
 function homePage() {
@@ -276,8 +285,8 @@ function submitScore(event) {
     li.textContent = finalUserScore;
     listEl.appendChild(li);
 
+    showHighScores();
+
     // Store finalUserScore in local storage
     localStorage.setItem("scores", JSON.stringify(finalUserScore));
-
-    showHighScores();
 }
