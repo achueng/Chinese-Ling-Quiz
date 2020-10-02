@@ -34,7 +34,7 @@ body {
 
 /* Container/Box */
 .custom-box {
-    border: solid skyblue 4px;
+    border: solid #5998d9 4px;
     border-radius: 10px;
     margin-top: 30px;
     padding: 20px;
