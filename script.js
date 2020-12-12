@@ -67,6 +67,7 @@ function quizTime() {
     time.textContent = timeElapsed;
     // If/else conditional to indicate when to stop quiz --> use clearInterval();
     if (timeElapsed === 0) {
+        submitPage();
         clearInterval(timeEl);
     }
 }
